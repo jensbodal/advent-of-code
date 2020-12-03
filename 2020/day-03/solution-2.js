@@ -11,8 +11,8 @@ const navigate = (forest, movesRight, movesDown) => {
   const len = forest.length;
   const pathLength = forest[0].length;
 
-  for (let posRight = movesRight, posDown = 0; posDown < len - movesDown; posRight+=movesRight, posDown+=movesDown) {
-    const nextPath = forest[posDown+movesDown];
+  for (let posRight = movesRight, posDown = movesDown; posDown < len - movesDown; posRight+=movesRight, posDown+=movesDown) {
+    const nextPath = forest[posDown];
     const nextPosition = nextPath[posRight % pathLength];
 
     if (nextPosition === TREE) {
