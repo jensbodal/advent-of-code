@@ -1,13 +1,5 @@
 const { data } = require('./input.json');
-
-// const data = [
-//   1721,
-//   979,
-//   366,
-//   299,
-//   675,
-//   1456
-// ];
+const { product, sum } = require('utils');
 
 const find2020 = arr => {
   const sorted = arr.sort((a,b) => a-b);
@@ -36,10 +28,11 @@ const find2020 = arr => {
     solution.left = arr[left];
     solution.runner = arr[runner];
     solution.right = arr[right];
-    solution.sum = solution.left + solution.runner + solution.right;
+    const values = [solution.left, solution.runner, solution.right];
+    solution.sum = sum(...values);
 
     if (solution.sum === 2020) {
-      solution.product = solution.left * solution.runner * solution.right;
+      solution.product = product(...values);
       return solution;
     }
 
