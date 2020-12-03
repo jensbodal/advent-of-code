@@ -1,8 +1,4 @@
-/**
-1-3 a: abcde
-1-3 b: cdefg
-2-9 c: ccccccccc
-**/
+#!/usr/bin/env node
 
 const fs = require('fs');
 
@@ -21,11 +17,7 @@ const validatePassword = (idx1, idx2, letter, password) => {
     return false;
   }
 
-  if (letter1 === letter || letter2 === letter) {
-    return true;
-  }
-
-  return false;
+  return letter1 === letter || letter2 === letter;
 }
 
 const validatePasswords = inputs => {

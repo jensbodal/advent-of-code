@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { readLinesAsArray } = require('utils');
 
 const testInput = readLinesAsArray('./input.txt');
