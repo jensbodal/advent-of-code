@@ -4,9 +4,7 @@
 2-9 c: ccccccccc
 **/
 
-const fs = require('fs');
-
-const readFile = filename => fs.readFileSync(filename).toString().split('\n').filter(Boolean);
+const {readLinesAsArray: readFile} = require('utils');
 
 const testInput = readFile('./test-input.txt');
 const solutionInput = readFile('./input.txt');
